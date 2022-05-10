@@ -1,0 +1,19 @@
+{
+  "name": "test-task-1",
+  "version": "1.0.0",
+  "description": "desktop screenshot scanning and text recognition",
+  "main": "app.js",
+  "scripts": {
+    "app": "node app.js"
+  },
+  "author": "Mogilin Vladimir",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dataobject-parser": "^1.2.22",
+    "dotenv": "^16.0.0",
+    "flat": "^5.0.2",
+    "readline": "^1.3.0",
+    "screenshot-desktop": "^1.12.7"
+  }
+}
