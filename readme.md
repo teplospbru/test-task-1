@@ -18,4 +18,4 @@
 
 В результате получаем текстовый файл:
 
-![Иллюстрация к проекту](https://github.com/teplospbru/test-task-1/blob/main/shot_1653314786295.txt)
+![Иллюстрация к проекту](https://github.com/teplospbru/test-task-1/blob/main/text_file.png)
