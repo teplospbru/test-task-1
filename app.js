@@ -11,14 +11,11 @@ if(process.stdin.isTTY) process.stdin.setRawMode(true);
 // прослушиваем в консоли "ctrl + k", чтобы запустить процесс
 process.stdin.on("keypress", (str, key) => {
     if(key.ctrl && key.name == "k") {
-        // делаем скриншот
-        screenshot({format: 'png'})
+        screenshot({format: 'png'}) // делаем скриншот
             .then((img) => {
-                // создаём уникальное имя
-                unique.setFileName();
-                fs.writeFileSync(unique.getFileName() + '.png', img);
-                // отправляем на сервер
-                send(img.toString('base64'));
+                unique.setFileName(); // создаём уникальное имя
+                fs.writeFileSync(unique.getFileName() + '.png', img); // записываем в файл
+                send(img.toString('base64')); // отправляем на сервер перекодируя в base64
             }).catch(e => console.log(e));
     }
 })
@@ -55,20 +52,17 @@ function send(encoded) {
             'Accept': 'application/json'
         }
     })
-    // получаем результат с сервера
-    .then(data => data.data.results[0].results[0].textDetection.pages[0].blocks)
+    .then(data => data.data.results[0].results[0].textDetection.pages[0].blocks) // получаем результат с сервера
     .then((answer) => {
-        // извлекаем текст
-        text(answer);
-        fs.writeFileSync(unique.getFileName() + '.txt', arr.join(' '));
+        text(answer); // извлекаем текст
+        fs.writeFileSync(unique.getFileName() + '.txt', arr.join(' ')); // записываем в файл
     })
     .catch(e => console.log(e));
 }
 
 // функция извлечения текста из ответа с сервера
 function text(data) {
-    // убираем вложенности у объекта ответа
-    let flattened = Parser.untranspose(data)
+    let flattened = Parser.untranspose(data) // убираем вложенности у объекта ответа
     for(let prop in flattened) {
         if(flattened.hasOwnProperty(prop) && /text/.test(prop)) {
             arr.push(flattened[prop])
