@@ -1,0 +1,1 @@
+Обзор Терминал Пн, 23 мая 17:06 en 100% o. jpg teplospb@teplospb-Vostro-15-5510:~/… teplospb@teplospb-Vostro-15-5510:~/Документы/Web-Dev/test-task-1$ node app. js доктор АНДРЕЙ КУРПАТОВ не надо ПОФИГИЗМА УНИВЕРСАЛЬНЫЕ ПРАВИЛА БЕСТСЕЛЛЕР
